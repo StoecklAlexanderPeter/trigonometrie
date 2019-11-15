@@ -1,0 +1,25 @@
+{
+  "name": "trigonometrie",
+  "version": "1.0.0",
+  "description": "vektor berechnen",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StoecklAlexanderPeter/trigonometrie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StoecklAlexanderPeter/trigonometrie/issues"
+  },
+  "homepage": "https://github.com/StoecklAlexanderPeter/trigonometrie#readme",
+  "dependencies": {
+    "ts-simplecanvas": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2"
+  }
+}

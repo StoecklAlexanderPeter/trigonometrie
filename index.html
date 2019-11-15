@@ -7,19 +7,31 @@
     <title>Trigonometrie</title>
 </head>
 <body>
+
+
     <div class="getB-container">
         <div class="starting-point-container">
-    
             <label>Start Punkt:</label>
+            <br>
             <label for="aX">X</label>
             <input type="number" name="aX" id="getB_aX">
             <label for="aY">Y</label>
             <input type="number" name="aY" id="getB_aY">
+            <br>
+            <label>Vektor:</label>
+            <br>
+            <label for="abX">X</label>
+            <input type="number" name="abX" id="getB_abX">
+            <label for="abY">Y</label>
+            <input type="number" name="abY" id="getB_abY">
         </div>
-            
-        <button type="submit" id="submitGetB">submit</button>
+        <br>
+        <button type="submit" id="submit">submit</button>
     </div>
-    
+    <br>
+    <canvas id="coordinate_system" width="500" height="500" style="border:1px solid #000000;">
+    </canvas>
+
 </body>
-<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="dist/src/index.js"></script>
 </html>
