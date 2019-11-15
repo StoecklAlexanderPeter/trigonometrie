@@ -23,15 +23,12 @@ function getB(aX: number, aY: number, abX: number, abY: number) {
     const vector: any = {};
     vector.a = {};
     vector.b = {};
-    vector.ab = {};
 
     // Fill Array
-    vector.a.x = aX * 50;
-    vector.a.y = aY * 50;
-    vector.b.x = bX * 50;
-    vector.b.y = bY * 50;
-    vector.ab.x = abX * 50;
-    vector.ab.y = abY * 50;
+    vector.a.x = (aX * 50);
+    vector.a.y = ctx.height - (aY * 50);
+    vector.b.x = (bX * 50);
+    vector.b.y = ctx.height - (bY * 50);
 
     return vector;
 }
