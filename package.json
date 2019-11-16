@@ -4,7 +4,10 @@
   "description": "vektor berechnen",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run tsc",
+    "tsc": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -w --output-style=compressed -o dist src/scss"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,7 @@
     "ts-simplecanvas": "^1.0.1"
   },
   "devDependencies": {
+    "node-sass": "^4.13.0",
     "typescript": "^3.7.2"
   }
 }

@@ -5,12 +5,16 @@ const getB_aY: HTMLInputElement = document.getElementById("getB_aY") as HTMLInpu
 const getB_abX: HTMLInputElement = document.getElementById("getB_abX") as HTMLInputElement;
 const getB_abY: HTMLInputElement = document.getElementById("getB_abY") as HTMLInputElement;
 
+const GAPSIZE = 50;
+
 const ctx: HTMLCanvasElement = document.getElementById("coordinate_system") as HTMLCanvasElement;
 const context = ctx.getContext("2d") as CanvasRenderingContext2D;
 
 drawBoard();
 
-submit.addEventListener("click", function() {
+submit.addEventListener("click", () => {
+    context.clearRect(0, 0, ctx.width, ctx.height);
+    drawBoard();
     drawCoordinates();
 });
 
@@ -23,12 +27,15 @@ function getB(aX: number, aY: number, abX: number, abY: number) {
     const vector: any = {};
     vector.a = {};
     vector.b = {};
+    vector.ab = {};
 
     // Fill Array
-    vector.a.x = (aX * 50);
-    vector.a.y = ctx.height - (aY * 50);
-    vector.b.x = (bX * 50);
-    vector.b.y = ctx.height - (bY * 50);
+    vector.a.x = (aX * GAPSIZE);
+    vector.a.y = ctx.height - (aY * GAPSIZE);
+    vector.b.x = (bX * GAPSIZE);
+    vector.b.y = ctx.height - (bY * GAPSIZE);
+    vector.ab.x = abX;
+    vector.ab.y = abY;
 
     return vector;
 }
@@ -40,7 +47,7 @@ function drawCoordinates() {
         getB_abX.valueAsNumber,
         getB_abY.valueAsNumber,
     );
-    // context.clearRect(0, 0, ctx.width, ctx.height);
+    //console.log(coordinates);
     context.strokeStyle = "#0066ff";
     context.lineWidth = 2;
 
@@ -53,15 +60,17 @@ function drawCoordinates() {
 }
 
 function drawBoard() {
-
-    const p = 0;
-
-    for (let x = 0; x <= ctx.width; x += 50) {
+    for (let x = 0; x <= ctx.width; x += GAPSIZE) {
+        if (x === ctx.width / 2) {
+            context.strokeStyle = "#ff0000";
+        } else {
+            context.strokeStyle = "#000000";
+        }
         context.moveTo(x, 0);
         context.lineTo(x, ctx.height);
     }
 
-    for (let y = 0; y <= ctx.height; y += 50) {
+    for (let y = 0; y <= ctx.height; y += GAPSIZE) {
         context.moveTo(0, y);
         context.lineTo(ctx.width, y);
     }
