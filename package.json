@@ -2,12 +2,11 @@
   "name": "trigonometrie",
   "version": "1.0.0",
   "description": "vektor berechnen",
-  "main": "index.ts",
+  "main": "main.ts",
   "scripts": {
-    "start": "npm run tsc",
-    "tsc": "tsc -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass -w --output-style=compressed -o dist src/scss"
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --mode development --hot",
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +22,26 @@
     "ts-simplecanvas": "^1.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-typescript": "^7.3.3",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.0",
-    "typescript": "^3.7.2"
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0"
   }
 }

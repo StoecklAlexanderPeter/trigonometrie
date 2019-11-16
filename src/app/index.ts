@@ -7,7 +7,7 @@ const getB_abY: HTMLInputElement = document.getElementById("getB_abY") as HTMLIn
 
 const GAPSIZE = 50;
 
-const ctx: HTMLCanvasElement = document.getElementById("coordinate_system") as HTMLCanvasElement;
+const ctx: HTMLCanvasElement = document.getElementById("canvas") as HTMLCanvasElement;
 const context = ctx.getContext("2d") as CanvasRenderingContext2D;
 
 drawBoard();
