@@ -1,8 +1,21 @@
+import { Config } from "../config";
 import { Vector2D } from "../math/vector";
 import { UnitConverter } from "./unit-converter";
 
 export class PixelRenderer {
+    private config = Config.getInstance();
+
     constructor(private context: CanvasRenderingContext2D) { }
+
+    public beginPath(): PixelRenderer {
+        this.context.beginPath();
+        return this;
+    }
+
+    public stroke(): PixelRenderer {
+        this.context.stroke();
+        return this;
+    }
 
     public fillStyle(color: string): PixelRenderer {
         this.context.fillStyle = color;
@@ -39,14 +52,59 @@ export class PixelRenderer {
         this.context.beginPath();
         this.moveTo(v1);
         this.lineTo(v2);
-        this.context.closePath();
+        this.context.stroke();
         return this;
     }
 
     public drawCircle(position: Vector2D, radius: number): PixelRenderer {
-        this.context.beginPath();
-        this.context.arc(position.x, position.y, radius, 0, 2 * Math.PI);
-        this.context.closePath();
+        this.context.arc(
+            UnitConverter.toPixels(position.x),
+            UnitConverter.toPixels(position.y),
+            UnitConverter.toPixels(radius),
+            0,
+            2 * Math.PI,
+        );
         return this;
+    }
+
+    public fillCircle(position: Vector2D, radius: number): PixelRenderer {
+        this.context.beginPath();
+        this.drawCircle(position, radius);
+        this.context.fill();
+        return this;
+    }
+
+    public strokeCircle(position: Vector2D, radius: number): PixelRenderer {
+        this.context.beginPath();
+        this.drawCircle(position, radius);
+        this.context.stroke();
+        return this;
+    }
+
+    public activateMathCoordinates() {
+        this.context.transform(
+            1,
+            0,
+            0,
+            -1,
+            this.context.canvas.width / 2,
+            this.context.canvas.height / 2,
+        );
+    }
+
+    public clearScreen() {
+        this.context.clearRect(
+            -this.context.canvas.width / 2,
+            -this.context.canvas.height / 2,
+            this.context.canvas.width,
+            this.context.canvas.height,
+        );
+    }
+
+    public toCoordinates(x: number, y: number): Vector2D {
+        return new Vector2D(
+            UnitConverter.toUnits(x - this.context.canvas.width / 2),
+            UnitConverter.toUnits(y * -1 + this.context.canvas.height / 2),
+        );
     }
 }

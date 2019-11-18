@@ -38,4 +38,9 @@ export class Vector2D {
     public angle(): number {
         return Math.atan(this.y / this.x);
     }
+
+    public set(x: number, y: number): void {
+        this.x = x;
+        this.y = y;
+    }
 }

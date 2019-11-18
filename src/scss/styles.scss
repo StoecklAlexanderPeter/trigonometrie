@@ -1,8 +1,11 @@
+@import "global";
+@import "canvas";
+@import "forms";
+
 html, body {
     font-size: 16px;
     box-sizing: border-box;
 }
-
 
 *, *::before, *::after {
     margin: 0;

@@ -1,3 +1,5 @@
+import { Vector2D } from "../math/vector";
+
 export class UnitConverter {
     public static toPixels(units: number): number {
         return units * this.UNIT_SIZE;
