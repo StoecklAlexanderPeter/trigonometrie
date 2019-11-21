@@ -7,6 +7,39 @@
     <title>Trigonometrie</title>
 </head>
 <body>
+    <div class="form-container">
+        <div class="form-selector-container">
+            <label for="opt1" class="radio">
+                <input type="radio" name="selection" id="opt1" class="hidden" checked/>
+                <span class="label"></span>Find B
+            </label>
+                
+            <label for="opt2" class="radio" >
+                <input type="radio" name="selection" id="opt2" class="hidden"/>
+                <span class="label"></span>Figma
+            </label>
+                
+            <label for="opt3" class="radio">
+                <input type="radio" name="selection" id="opt3" class="hidden"/>
+                <span class="label"></span>InVision
+            </label>
+        </div>
+        <div class="forms">
+            <div id="first-form" class="form" style="display: block;">
+                <label for="aPoint">Point A:</label>
+                <input type="number" name="aPoint" id="getB-aPoint">
+                <label for="aPoint">Vektor AB:</label>
+                <input type="number" name="abVektor" id="getB-abVektor">
+                <input type="submit" name="submit" id="get-B-submit">
+            </div>
+            
+            <div id="second-form" class="form" style="display: none;">2</div>
+            
+            <div id="third-form" class="form" style="display: none;">3</div>
+        </div>
+
+    </div>
+
     <!-- <div class="getB-container">
         <div class="starting-point-container">
             <label>Start Punkt:</label>
