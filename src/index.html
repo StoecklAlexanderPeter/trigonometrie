@@ -11,31 +11,70 @@
         <div class="form-selector-container">
             <label for="opt1" class="radio">
                 <input type="radio" name="selection" id="opt1" class="hidden" checked/>
-                <span class="label"></span>Find B
+                <span class="label"></span>B finden
             </label>
                 
             <label for="opt2" class="radio" >
                 <input type="radio" name="selection" id="opt2" class="hidden"/>
-                <span class="label"></span>Figma
+                <span class="label"></span>Winkel & Betrag
             </label>
                 
             <label for="opt3" class="radio">
                 <input type="radio" name="selection" id="opt3" class="hidden"/>
-                <span class="label"></span>InVision
+                <span class="label"></span>Polar zu Kartesisch
             </label>
         </div>
         <div class="forms">
             <div id="first-form" class="form" style="display: block;">
-                <label for="aPoint">Point A:</label>
-                <input type="number" name="aPoint" id="getB-aPoint">
-                <label for="aPoint">Vektor AB:</label>
-                <input type="number" name="abVektor" id="getB-abVektor">
-                <input type="submit" name="submit" id="get-B-submit">
+                <label>Start Punkt:</label>
+                <br/> 
+                <label for="aX">X</label>   
+                <input type="number" name="aX" id="getB_aX">
+                <label for="aY">Y</label>
+                <input type="number" name="aY" id="getB_aY">
+                <label>Vektor:</label>
+                <br/> 
+                <label for="abX">X</label>
+                <input type="number" name="abX" id="getB_abX">
+                <label for="abY">Y</label>
+                <input type="number" name="abY" id="getB_abY">
+                <input type="submit" name="submit" id="get-B-submit" class="submit">
+                <div id="info-getB">
+
+                </div>
             </div>
             
-            <div id="second-form" class="form" style="display: none;">2</div>
+            <div id="second-form" class="form" style="display: none;">
+                <label>Vektor:</label>
+                <br/> 
+                <label for="abX">X</label>
+                <input type="number" name="abX" id="getMagAng_abX">
+                <label for="abY">Y</label>
+                <input type="number" name="abY" id="getMagAng_abY">
+                <input type="submit" name="submit" id="get-MagAng-submit" class="submit">
+                <div id="info-getMagAng">
+
+                </div>
+            </div>
             
-            <div id="third-form" class="form" style="display: none;">3</div>
+            <div id="third-form" class="form" style="display: none;">
+                <label>Start Punkt:</label>
+                <br/> 
+                <label for="aX">X</label>   
+                <input type="number" name="aX" id="polarToCartesian_aX">
+                <label for="aY">Y</label>
+                <input type="number" name="aY" id="polarToCartesian_aY">
+                <label>Vektor:</label>
+                <br/> 
+                <label for="magnitude">Betrag</label>
+                <input type="number" name="magnitude" id="polarToCartesian_magnitude">
+                <label for="angle">Winkel in Radias</label>
+                <input type="number" name="angle" id="polarToCartesian_angle">
+                <input type="submit" name="submit" id="polarToCartesian-submit" class="submit">
+                <div id="info-polarToCartesian">
+
+                </div>
+            </div>
         </div>
 
     </div>
