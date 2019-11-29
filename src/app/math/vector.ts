@@ -1,4 +1,4 @@
-export class Vector2D {
+export class  Vector2D {
     public static add(v1: Vector2D, v2: Vector2D): Vector2D {
         return new Vector2D(v1.x + v2.x, v1.y + v2.y);
     }

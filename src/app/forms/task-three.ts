@@ -19,6 +19,7 @@ export class TaskThree {
         const pointA = new Vector2D(polarToCartesian_aX.valueAsNumber, polarToCartesian_aY.valueAsNumber);
         const vektorAB = Vector2D.polarToCartesian(polarToCartesian_magnitude.valueAsNumber, polarToCartesian_angle.valueAsNumber);
         const pointB = Vector2D.add(pointA, vektorAB);
+        const sides = Vector2D.subtract(pointB, pointA);
 
         let canvas = document.getElementById("canvas") as HTMLCanvasElement;
         let context = canvas.getContext("2d") as CanvasRenderingContext2D;
@@ -39,7 +40,7 @@ export class TaskThree {
         this.renderer.stroke();
 
         if(polarToCartesian_aX.value != "" && polarToCartesian_aY.value != "" && polarToCartesian_magnitude.value != "" && polarToCartesian_angle.value != "") {
-        document.getElementById("info-polarToCartesian").innerHTML += "<p>Alpha: " + round(toDegrees(vektorAB.angle())) + "grad | A: " + pointA.x + "," + pointA.y + " | B: " + round(pointB.x) + "," + round(pointB.y) + " | AB: " + round(vektorAB.x) + "," + round(vektorAB.y) + "</p>"
+        document.getElementById("info-polarToCartesian").innerHTML += "<p>Alpha: " + round(toDegrees(vektorAB.angle())) + " grad | Beta: " + round(90 - toDegrees(vektorAB.angle()))  + " grad | Gamma: " + 90 + " grad | A: " + pointA.x + "," + pointA.y + " | B: " + round(pointB.x) + "," + round(pointB.y) + " | AB: " + round(vektorAB.x) + "," + round(vektorAB.y) + "</p>"
         }
     }
 

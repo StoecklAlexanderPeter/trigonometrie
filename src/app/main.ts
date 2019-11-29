@@ -43,6 +43,7 @@ function main() {
     form.changeForm();
     form.submitForm(renderer);
 
+
     renderer.activateMathCoordinates();
 
     /*

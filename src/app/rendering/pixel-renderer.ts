@@ -67,6 +67,22 @@ export class PixelRenderer {
         return this;
     }
 
+    /*
+    public drawAngle(position: Vector2D, radius: number, angle: number): PixelRenderer {
+        this.context.beginPath();
+        this.context.arc(
+            UnitConverter.toPixels(position.x),
+            UnitConverter.toPixels(position.y),
+            UnitConverter.toPixels(radius),
+            0,
+            angle,
+            false
+        );
+        this.context.stroke();
+        return this;
+    }
+    */
+
     public fillCircle(position: Vector2D, radius: number): PixelRenderer {
         this.context.beginPath();
         this.drawCircle(position, radius);
