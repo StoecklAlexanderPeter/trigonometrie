@@ -4,16 +4,21 @@ import { Vector2D } from "./math/vector";
 import { Timer } from "./rendering/loop";
 import { PixelRenderer } from "./rendering/pixel-renderer";
 import { UnitConverter } from "./rendering/unit-converter";
+import { Form } from "./forms/form";
+import { toDegrees, round } from "./math/converters";
 
 const config = Config.getInstance();
 const timer = new Timer();
 let canvas: HTMLCanvasElement;
 let context: CanvasRenderingContext2D;
 let renderer: PixelRenderer;
+let form: Form;
 let mousePosition = new Vector2D(0, 0);
 
 const clickedPositions: Vector2D[] = [];
+const vektoren: Vector2D[] = [];
 
+/*
 window.addEventListener("mousemove", (event) => {
     mousePosition = renderer.toCoordinates(event.clientX, event.clientY);
 });
@@ -23,6 +28,7 @@ window.addEventListener("click", (event) => {
         renderer.toCoordinates(event.clientX, event.clientY)
     );
 });
+*/
 
 function main() {
     canvas = document.getElementById("canvas") as HTMLCanvasElement;
@@ -32,9 +38,15 @@ function main() {
     UnitConverter.setUnitSize(window.innerWidth / config.size.width);
 
     renderer = new PixelRenderer(context);
+    form = new Form();
+
+    form.changeForm();
+    form.submitForm(renderer);
+
 
     renderer.activateMathCoordinates();
 
+    /*
     timer.update = (deltaTime: number) => {
         renderer.clearScreen();
 
@@ -52,6 +64,8 @@ function main() {
         // renderer.drawLine(new Vector2D(1, 1), new Vector2D(3, 4));
         renderer.fillCircle(mousePosition, 0.2);
     };
+    */
+   drawGrid(context);
 
     timer.play();
 }
