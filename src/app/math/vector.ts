@@ -39,6 +39,10 @@ export class  Vector2D {
         return Math.atan(this.y / this.x);
     }
 
+    public asin(angle: number): number {
+        return Math.asin(angle);
+    }
+
     public set(x: number, y: number): void {
         this.x = x;
         this.y = y;
